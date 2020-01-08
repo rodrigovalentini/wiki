@@ -4,6 +4,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
 import Login from "./pages/login";
 import Register from "./pages/register";
+import Portal from "./pages/portal";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route exact path="/login" component={Login}></Route>
         <Redirect exact from="/" to="/login" />
         <Route exact path="/register" component={Register}></Route>
+        <Route exact path="/portal" component={Portal}></Route>
       </Switch>
     </div>
   );

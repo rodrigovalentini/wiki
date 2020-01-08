@@ -45,6 +45,7 @@ class Login extends React.Component {
         : undefined
     };
     if (!errors.username && !errors.email) {
+      this.props.history.push("/portal");
     }
     return errors;
   };
