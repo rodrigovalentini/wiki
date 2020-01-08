@@ -20,7 +20,6 @@ class Register extends React.Component {
     };
   }
   onChange = event => {
-    console.log(this.state);
     this.setState({
       eventResult: `onChange called with value: ${event.target.value}`
     });
@@ -46,7 +45,6 @@ class Register extends React.Component {
         : undefined
     };
     if (!errors.username && !errors.email) {
-      console.log(data);
     }
     return errors;
   };
@@ -67,42 +65,45 @@ class Register extends React.Component {
         }}
       >
         <h1>Cadastro</h1>
-        <Form onSubmit={this.handleSubmit}>
-          {({ formProps, dirty, submitting }) => (
-            <form {...formProps}>
-              <Field name="email" label="Email" defaultValue="" isRequired>
-                {({ fieldProps, error }) => (
-                  <Fragment>
-                    <TextField {...fieldProps} />
-                    {!error && <HelperMessage>Deve contar @</HelperMessage>}
-                    {error && <ErrorMessage>{error}</ErrorMessage>}
-                  </Fragment>
-                )}
-              </Field>
-              <Field
-                name="password"
-                defaultValue=""
-                label="Digite sua senha"
-                isRequired
-                type="password"
-              >
-                {({ fieldProps, error, valid }) => (
-                  <TextField {...fieldProps} />
-                )}
-              </Field>
-              <FormFooter>
-                <Link to="/login"> Já tenho conta</Link>
-                <Button
-                  type="submit"
-                  appearance="primary"
-                  isDisabled={!dirty || submitting}
+        <div className="card">
+          <Form onSubmit={this.handleSubmit}>
+            {({ formProps, dirty, submitting }) => (
+              <form {...formProps}>
+                <Field name="email" label="Email" defaultValue="" isRequired>
+                  {({ fieldProps, error }) => (
+                    <Fragment>
+                      <TextField {...fieldProps} />
+                      {!error && <HelperMessage>Deve contar @</HelperMessage>}
+                      {error && <ErrorMessage>{error}</ErrorMessage>}
+                    </Fragment>
+                  )}
+                </Field>
+                <Field
+                  name="password"
+                  defaultValue=""
+                  label="Digite sua senha"
+                  isRequired
+                  type="password"
                 >
-                  Criar conta
-                </Button>{" "}
-              </FormFooter>
-            </form>
-          )}
-        </Form>
+                  {({ fieldProps, error, valid }) => (
+                    <TextField {...fieldProps} />
+                  )}
+                </Field>
+                <FormFooter>
+                  <Link to="/login"> Já tenho conta</Link>
+                  <Button
+                    type="submit"
+                    appearance="primary"
+                    className="btn-margin"
+                    isDisabled={!dirty || submitting}
+                  >
+                    Criar conta
+                  </Button>{" "}
+                </FormFooter>
+              </form>
+            )}
+          </Form>
+        </div>
       </div>
     );
   }

@@ -1,4 +1,15 @@
-p {
-  color: red;
-  font-size: 48px;
+a {
+  display: flex;
+  margin-right: 20px;
+}
+
+.card {
+  -webkit-backdrop-filter: blur(5px) !important;
+  backdrop-filter: blur(5px) !important;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.15), 0 3px 6px 0 rgba(0, 0, 0, 0.15) !important;
+  padding: 2px 16px 2px 16px;
+}
+
+.btn-margin {
+  margin-bottom: 10px;
 }
