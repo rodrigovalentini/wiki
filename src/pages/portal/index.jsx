@@ -18,7 +18,7 @@ import Row from "react-bootstrap/Row";
 import TextArea from "@atlaskit/textarea";
 import styled from "styled-components";
 import DynamicTable from "@atlaskit/dynamic-table";
-import { head, rows } from "./data-table/sample-data";
+import { head, rows } from "./data-table/table";
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const Wrapper = styled.div`

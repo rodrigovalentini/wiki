@@ -43,12 +43,12 @@ class NavBar extends React.Component {
         <Col xs lg="2"></Col>
         <Col xs lg="1">
           <div className="text-center">
-            <span>Usuário:</span>
+            <button>Rodrigo Valentini</button>
           </div>
         </Col>
         <Col xs lg="1">
           <div className="text-center">
-            <span>Sair</span>
+            <button>Sair</button>
           </div>
         </Col>
       </Navbar>
