@@ -1,16 +1,34 @@
-import React, { Component, Fragment } from "react";
-import { Route, Link } from "react-router-dom";
+import React, { Component } from "react";
 import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import "./style.css";
+import Modal, { ModalTransition } from "@atlaskit/modal-dialog";
+import { Link, withRouter } from "react-router-dom";
+
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  state = { isOpen: false };
+
+  redirect = async data => {
+    await sleep(500);
+    this.props.history.push("/login");
+  };
+
+  open = () => this.setState({ isOpen: true });
+
+  close = () => this.setState({ isOpen: false });
+
   render() {
+    const { isOpen } = this.state;
+    const actions = [
+      { text: "Não", onClick: this.close },
+      { text: "Sim", onClick: this.redirect }
+    ];
     return (
       <Navbar expand="lg" variant="light" id="nav">
         <Navbar.Brand id="title-nav">Wiki</Navbar.Brand>
@@ -43,16 +61,27 @@ class NavBar extends React.Component {
         <Col xs lg="2"></Col>
         <Col xs lg="1">
           <div className="text-center">
-            <button>Rodrigo Valentini</button>
+            <button id="btn-no-style"> Rodrigo Valentini</button>
           </div>
         </Col>
         <Col xs lg="1">
           <div className="text-center">
-            <button>Sair</button>
+            <button onClick={this.open} id="btn-no-style">
+              Sair
+            </button>
+            <ModalTransition>
+              {isOpen && (
+                <Modal
+                  actions={actions}
+                  onClose={this.close}
+                  heading="Deseja fazer logoff no sistema?"
+                ></Modal>
+              )}
+            </ModalTransition>
           </div>
         </Col>
       </Navbar>
     );
   }
 }
-export default NavBar;
+export default withRouter(NavBar);

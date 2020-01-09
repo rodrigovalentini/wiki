@@ -15,4 +15,17 @@ p {
 #nav {
   background-color: #253858;
   color: #ffffff;
+  box-shadow: 3px 0 6px rgba(0, 0, 0.24);
+  z-index: 1;
+}
+
+#btn-no-style {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: #ffffff;
+  font-size: 14px;
 }

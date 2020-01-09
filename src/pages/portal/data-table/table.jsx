@@ -74,13 +74,13 @@ export const rows = data.map((president, index) => ({
     {
       content: (
         <div>
-          <Button className="mr-2" type="submit" appearance="link">
+          <Button className="mr-2" type="button" appearance="link">
             Ver
           </Button>
-          <Button className="mr-2" type="submit" appearance="link">
+          <Button className="mr-2" type="button" appearance="link">
             Editar
           </Button>
-          <Button className="mr-2" type="submit" appearance="link">
+          <Button className="mr-2" type="button" appearance="link">
             Excluir
           </Button>
         </div>

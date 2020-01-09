@@ -1,14 +1,7 @@
 import React, { Component, Fragment } from "react";
-import { Route, Link } from "react-router-dom";
 import Button from "@atlaskit/button";
-import Form, {
-  Field,
-  ErrorMessage,
-  FormFooter,
-  HelperMessage
-} from "@atlaskit/form";
+import Form, { Field, ErrorMessage, FormFooter } from "@atlaskit/form";
 import TextField from "@atlaskit/textfield";
-import FieldText, { FieldTextStateless } from "@atlaskit/field-text";
 import Select from "@atlaskit/select";
 import "./style.css";
 import Navbar from "../../components/navbar";
@@ -19,7 +12,6 @@ import TextArea from "@atlaskit/textarea";
 import styled from "styled-components";
 import DynamicTable from "@atlaskit/dynamic-table";
 import { head, rows } from "./data-table/table";
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const Wrapper = styled.div`
   min-width: 600px;
@@ -29,9 +21,11 @@ class Portal extends React.Component {
   constructor(props) {
     super(props);
   }
+
   handleSubmit = data => {
     console.log(data);
   };
+
   render() {
     return (
       <div>
