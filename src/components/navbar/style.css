@@ -3,9 +3,16 @@
 }
 
 p {
-  font-size: 30px;
+  margin-bottom: -10px !important;
+  font-size: 40px;
 }
 
 #title-nav {
   font-size: 50px;
+  color: #ffffff;
+  font-weight: bold;
+}
+#nav {
+  background-color: #253858;
+  color: #ffffff;
 }
