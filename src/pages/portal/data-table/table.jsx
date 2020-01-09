@@ -44,7 +44,6 @@ export const createHead = withWidth => {
         isSortable: true,
         width: withWidth ? 54 : undefined
       },
-
       {
         key: "more",
         content: "Ação"
@@ -55,20 +54,20 @@ export const createHead = withWidth => {
 
 export const head = createHead(true);
 
-export const rows = data.map((president, index) => ({
-  key: `row-${index}-${president.nm}`,
+export const rows = data.map((post, index) => ({
+  key: `row-${index}-${post.nm}`,
   cells: [
     {
-      key: createKey(president.nm),
-      content: president.id
+      key: createKey(post.nm),
+      content: post.id
     },
     {
-      key: createKey(president.pp),
-      content: president.pp
+      key: createKey(post.pp),
+      content: post.pp
     },
     {
-      key: president.id,
-      content: president.tm
+      key: createKey(post.tm),
+      content: post.tm
     },
 
     {
